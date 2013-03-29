@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+export DEB_CFLAGS_MAINT_APPEND  = $(shell getconf LFS_CFLAGS)
+export DEB_LDFLAGS_MAINT_APPEND = $(shell getconf LFS_LDFLAGS)
+
+%:
+	dh $@ --with autotools_dev
